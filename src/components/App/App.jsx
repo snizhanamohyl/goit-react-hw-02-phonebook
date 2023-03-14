@@ -2,7 +2,7 @@ import { Component } from "react";
 import Form from 'components/Form/Form';
 import Contacts from 'components/Contacts/Contacts';
 import Filter from 'components/Filter/Filter';
-
+import css from './App.module.css';
 
 export default class App extends Component {
   state = {
@@ -50,7 +50,7 @@ export default class App extends Component {
 
   render() {
     return (
-      <div>
+      <div className={css.container}>
         <h1>Phonebook</h1>
         <Form contacts={this.state.contacts} addContact={this.addContact} updateState={ this.updateState}  />
         {this.state.contacts.length !== 0 && <div><h2>Contacts</h2>

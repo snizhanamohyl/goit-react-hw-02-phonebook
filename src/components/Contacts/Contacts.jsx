@@ -1,4 +1,5 @@
 import { Component } from "react";
+import css from './Contacts.module.css';
 
 export default class Contacts extends Component {
   onClick = ({ target }) => {
@@ -12,7 +13,7 @@ export default class Contacts extends Component {
     const { contacts } = this.props;
 
     return <ul>
-      {contacts.map((contact) => { return <li key={contact.id} data-key={contact.id }>{contact.name} : { contact.number} <button onClick={this.onClick}>Delete</button></li>})}
+      {contacts.map((contact) => { return <li key={contact.id} data-key={contact.id } className={css.item}>{contact.name}: { contact.number} <button className={css.btn} onClick={this.onClick}>Delete</button></li>})}
     </ul>
   }
 };

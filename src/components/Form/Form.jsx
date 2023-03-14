@@ -1,5 +1,6 @@
 import { Component } from "react";
 import { nanoid } from 'nanoid';
+import css from './Form.module.css';
 
 export default class Form extends Component {
   state = {
@@ -33,10 +34,10 @@ export default class Form extends Component {
     const { name, number } = this.state;
 
       return (
-        <form onSubmit={ this.onSubmit}>
-          <label>
+        <form className={css.form} onSubmit={ this.onSubmit}>
+          <label className={css.label}>
           Name
-          <input
+          <input className={css.input}
         type="text"
         name="name"
         pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
@@ -46,16 +47,15 @@ export default class Form extends Component {
               onChange={this.onChange}
       />
           </label>
-          <label>Phone<input
-  type="tel"
-  name="number"
-  pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
-  title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
+          <label className={css.label}>Phone<input className={css.input}
+            type="tel"
+            name="number"
+            pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
+            title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
             required
             value={number}
-             onChange={this.onChange}
-/></label>
-          <button type="submit">Add contact</button>
+            onChange={this.onChange}/></label>
+          <button className={css.btn} type="submit">Add contact</button>
         </form>
         );
   }
