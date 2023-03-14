@@ -52,7 +52,7 @@ export default class App extends Component {
     return (
       <div className={css.container}>
         <h1>Phonebook</h1>
-        <Form contacts={this.state.contacts} addContact={this.addContact} updateState={ this.updateState}  />
+        <Form contacts={this.state.contacts} addContact={this.addContact}  />
         {this.state.contacts.length !== 0 && <div><h2>Contacts</h2>
           <Filter getFilterValue={this.getFilterValue} updateFilter={ this.updateFilter} />
           <Contacts deleteContact={this.deleteContact} contacts={this.filterContacts()} /></div>}

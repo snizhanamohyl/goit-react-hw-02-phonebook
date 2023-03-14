@@ -1,5 +1,6 @@
 import { Component } from "react";
 import { nanoid } from 'nanoid';
+import PropTypes from 'prop-types'; 
 import css from './Form.module.css';
 
 export default class Form extends Component {
@@ -59,4 +60,13 @@ export default class Form extends Component {
         </form>
         );
   }
+};
+
+Form.propTypes = {
+  contacts: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+     number: PropTypes.string.isRequired,
+  })),
+  addContact: PropTypes.func.isRequired,
 };
